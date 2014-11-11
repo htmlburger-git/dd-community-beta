@@ -16,3 +16,4 @@ To help us fix and improve the site as much as possible please:
 - Include your browser, operating system, and device in your issue
 
 Thank you for being apart of this, you rock!
+Thank you for being apart of this, you rock!
