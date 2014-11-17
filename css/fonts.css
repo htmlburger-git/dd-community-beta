@@ -1,0 +1,58 @@
+/* ==========================================================================
+	#Fonts
+========================================================================== */
+
+@font-face {
+	font-family: 'PenumbraHalfSerif';
+	src: url('fonts/penumbrahalfserifstdreg-webfont.eot');
+	src: url('fonts/penumbrahalfserifstdreg-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/penumbrahalfserifstdreg-webfont.woff') format('woff'),
+		 url('fonts/penumbrahalfserifstdreg-webfont.ttf') format('truetype'),
+		 url('fonts/penumbrahalfserifstdreg-webfont.svg#penumbra_halfserif_stdregular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'HelveticaNeueLtCom';
+	src: url('fonts/helveticaneueltcommd-webfont.eot');
+	src: url('fonts/helveticaneueltcommd-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/helveticaneueltcommd-webfont.woff') format('woff'),
+		 url('fonts/helveticaneueltcommd-webfont.ttf') format('truetype'),
+		 url('fonts/helveticaneueltcommd-webfont.svg#helvetica_neue_lt_com65Md') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'HelveticaNeueLtCom';
+	src: url('fonts/helveticaneueltcombd-webfont.eot');
+	src: url('fonts/helveticaneueltcombd-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/helveticaneueltcombd-webfont.woff') format('woff'),
+		 url('fonts/helveticaneueltcombd-webfont.ttf') format('truetype'),
+		 url('fonts/helveticaneueltcombd-webfont.svg#helvetica_neue_lt_com75_bold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'HelveticaNeueLtCom';
+	src: url('fonts/helveticaneueltcomhv-webfont.eot');
+	src: url('fonts/helveticaneueltcomhv-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/helveticaneueltcomhv-webfont.woff') format('woff'),
+		 url('fonts/helveticaneueltcomhv-webfont.ttf') format('truetype'),
+		 url('fonts/helveticaneueltcomhv-webfont.svg#helvetica_neue_lt_com85_heavy') format('svg');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Tera Deva';
+	src: url('fonts/tera_deva-webfont.eot');
+	src: url('fonts/tera_deva-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/tera_deva-webfont.woff') format('woff'),
+		 url('fonts/tera_deva-webfont.ttf') format('truetype'),
+		 url('fonts/tera_deva-webfont.svg#tera_devamedium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
