@@ -83,6 +83,50 @@
 		}
 	};
 
+	// Comment areas
+	// Expand textareas and show form buttons
+	function shareboxControlsShow() {
+		var textarea = doc.querySelectorAll('.sharebox-control');
+		var i = 0;
+
+		for ( ; i < textarea.length; i++ ) {
+			textarea[i].addEventListener('focus', function(event) {
+				this.parentNode.classList.add('show-controls');
+			}, false);
+		}
+	};
+
+	// Comment areas
+	// Collapse textareas and hide form buttons
+	function shareboxControlsHide() {
+		var button = doc.querySelectorAll('.btn-cancel-share');
+		var i = 0;
+
+		for ( ; i < button.length; i++ ) {
+			button[i].addEventListener('click', function(event) {
+				event.preventDefault();
+
+				var form = doc.getElementById(this.getAttribute('data-handle'));
+
+				form.classList.remove('show-controls');
+			}, false);
+		}
+	};
+
+	// Some elements overlap due to position not static
+	// We overwrite their z-index with JS since we do not know their exact count
+	// e.g. article's comments element
+	// @param obj / selector
+	function setZindex(element) {
+		var elements = doc.querySelectorAll(element);
+		var zIndex = 99; // We assume that there will be no more than 100 elements per page.
+		var i = 0;
+
+		for ( ; i < elements.length; i++ ) {
+			elements[i].style.zIndex = zIndex - i;
+		}
+	};
+
 	// Document Ready Event
 	document.addEventListener('DOMContentLoaded', function(event) {
 		// Assign values to the empty variables above
@@ -151,6 +195,19 @@
 			htmlTag.classList.remove(visibilityClassNames.nav);
 			htmlTag.classList.toggle(visibilityClassNames.sidebar);
 		}, false);
+
+		// Comment areas
+		// Expand textareas and show form buttons
+		shareboxControlsShow();
+
+		// Comment areas
+		// Collapse textareas and hide form buttons
+		shareboxControlsHide();
+
+		// Some elements overlap due to position not static
+		// We overwrite their z-index with JS since we do not know their exact count
+		// e.g. article's comments
+		setZindex('.article-comment');
 	}, false);
 
 })(window, document);

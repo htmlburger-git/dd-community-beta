@@ -285,6 +285,11 @@ h3 { font-size: 14px; line-height: 18px; color: #fff; font-weight: 700; }
 .ico-twitter-retweet { width: 17px; height: 15px; background-position: -285px -207px; }
 .ico-twitter-favorite { width: 15px; height: 15px; background-position: -237px -184px; }
 .ico-forums-alt { width: 14px; height: 14px; background-position: -262px -231px; }
+.ico-chevron-left,
+.ico-chevron-right { width: 5px; height: 8px; }
+.ico-chevron-left { background-position: -264px -255px; }
+.ico-chevron-right { background-position: -279px -255px; }
+.ico-comments { width: 16px; height: 17px; background-position: -190px -254px; }
 
 /* Icons Active States */
 
@@ -417,7 +422,7 @@ a:focus .ico-settings-alt { background-position: -235px -207px; }
 
 .nav-visible .link-search { display: inline; }
 
-.header-bar .game-switch { width: 215px; float: left; position: relative; border-right: 1px solid #383838; }
+.header-bar .game-switch { width: 215px; float: left; position: relative; z-index: 5; border-right: 1px solid #383838; }
 
 .header-bar .game-switch .dropdown-trigger { font-size: 0; line-height: 0; text-align: center; height: 44px; display: block; background: transparent; }
 .header-bar .game-switch .dropdown-trigger img { width: auto; height: 100%; }
@@ -578,7 +583,7 @@ a:focus .ico-settings-alt { background-position: -235px -207px; }
 .main-body-head h2 > [class^="ico"] { margin-right: 5px; }
 .main-body-head h2 .link-settings { float: right; }
 
-.sharebox { padding: 10px; margin-bottom: 20px; background-color: #30353b; }
+.sharebox form { position: relative; padding: 10px; margin-bottom: 20px; background-color: #30353b; }
 .sharebox textarea { height: 50px; float: left; padding: 14px 12px; margin: 0; }
 .sharebox textarea {
 	width: calc(100% - 60px); 
@@ -587,6 +592,9 @@ a:focus .ico-settings-alt { background-position: -235px -207px; }
 	width: -o-calc(100% - 60px); 
 	width: -ms-calc(100% - 60px); 
 }
+.sharebox textarea:focus,
+.sharebox .show-controls textarea { height: 78px; background-color: #1e1e1e; box-shadow: none; -webkit-box-shadow: none; }
+
 .sharebox .sharebox-upload { width: 50px; height: 50px; float: right; position: relative; overflow: hidden; background-color: #fff; }
 .sharebox .sharebox-upload {
 	background: rgb(68,75,83);
@@ -600,6 +608,12 @@ a:focus .ico-settings-alt { background-position: -235px -207px; }
 .sharebox .sharebox-upload input { width: 100%; height: 100px; display: block; position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 0; border: 0; margin: 0; z-index: 2; opacity: 0; -webkit-appearance: none; }
 .sharebox .sharebox-upload [class^="ico"] { display: block; position: absolute; top: 50%; left: 50%; }
 
+.sharebox .sharebox-actions { text-align: right; width: 100%; display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 20px 0; }
+.sharebox .sharebox-actions [class^="btn"] { min-width: 90px; padding: 9px 20px 7px; margin: 0 0 0 10px; }
+
+.sharebox .show-controls { margin-bottom: 70px; }
+.sharebox .show-controls .sharebox-actions { display: block; }
+
 .articles [class^="column"],
 .section-forums [class^="column"] { padding: 0 0 20px; }
 
@@ -608,7 +622,7 @@ a:focus .ico-settings-alt { background-position: -235px -207px; }
 .articles .article + .article,
 .section-forums-single + .section-forums-single { margin-top: 20px; }
 
-.articles .article-head { padding: 10px 0 10px 10px; border-bottom: 1px solid #30353b; }
+.articles .article-head { padding: 10px 0 10px 10px; border-bottom: 1px solid #30353b; position: relative; z-index: 3; }
 
 .articles .article-meta { position: relative; padding-left: 50px; }
 .articles .article-meta img { width: 40px; height: 40px; display: block; position: absolute; top: 0; left: 0; }
@@ -644,7 +658,8 @@ a:focus .ico-settings-alt { background-position: -235px -207px; }
 .articles .article-body figure img { width: 100%; }
 
 .articles .article-body-actions { color: #fff; text-align: right; }
-.articles .article-body-actions p { font-size: 13px; line-height: 1.25; color: #fff; margin: 0; }
+.articles .article-body-actions p { font-size: 13px; line-height: 1.25; color: #fff; margin: 0; display: inline-block; padding-left: 18px; }
+.articles .article-body-actions p:first-child { padding-left: 0; }
 .articles .article-body-actions [class^="ico"] { position: relative; top: -1px; margin-right: 5px; }
 
 .articles .article-comments { border-bottom: 5px solid #30353b; }
@@ -662,6 +677,11 @@ a:focus .ico-settings-alt { background-position: -235px -207px; }
 .articles .article-comment .article-options { position: absolute; top: 0; right: 0; }
 
 .articles .article-comment-reply textarea { height: 30px; margin: 0; }
+.articles .article-comment-reply textarea:focus,
+.articles .article-comment-reply .show-controls textarea { height: 70px; background-color: #1e1e1e; box-shadow: none; -webkit-box-shadow: none; }
+.articles .article-comment-reply .form-actions { text-align: right; display: none; padding-top: 10px; background-color: #30353b; }
+.articles .article-comment-reply .form-actions [class^="btn"] { min-width: 90px; padding: 9px 20px 7px; margin: 0 0 0 10px; }
+.articles .article-comment-reply .show-controls .form-actions { display: block; }
 
 .articles .article-social { border-top: 1px solid #30353b; }
 .articles .article-social ul { font-size: 0; line-height: 0; list-style: none outside none; margin: 0; }
@@ -692,6 +712,53 @@ a:focus .ico-settings-alt { background-position: -235px -207px; }
 .section-forums-single h4.collapsed .toggler:before { content: '+'; }
 .section-forums-single h4.collapsed + ul { display: none; }
 
+.main-events h2 { font-size: 15px; }
+
+.section-calendar .section-head { padding: 2px 0 23px; }
+.section-calendar .section-head .link-add { float: right; }
+.section-calendar .section-head > i,
+.section-calendar .calendar-head,
+.section-calendar .calendar-head * { display: inline-block; vertical-align: bottom; position: relative; top: 1px; }
+.section-calendar .calendar-head a { text-align: center; width: 24px; height: 16px; padding: 4px 0; }
+.section-calendar .calendar-head a i { display: block; margin: 0 auto; position: relative; top: -1px; }
+.section-calendar .calendar-head h2 { line-height: 16px; padding: 0; }
+
+.section-calendar table { margin: 0; background-color: transparent; }
+.section-calendar tr,
+.section-calendar tr:nth-of-type(even) { background-color: transparent; }
+.section-calendar th { font-size: 12px; line-height: 14px; color: #fff; font-weight: 700; text-transform: uppercase; text-align: center; width: 14.28%; padding: 8px 0; border-left: 1px solid #000; background-color: #383c42; }
+.section-calendar th span { display: none; }
+.section-calendar td { padding: 0; border-left: 1px solid #000; border-top: 1px solid #000; background-color: #383c42; vertical-align: top; }
+.section-calendar td,
+.section-calendar td * { font-size: 9px; line-height: 1; color: #79818b; font-weight: 400; }
+.section-calendar th:first-child,
+.section-calendar td:first-child { border-left: 0; }
+.section-calendar .other-month { background-color: transparent; border-left-color: transparent; }
+
+.section-calendar .calendar-cell { min-height: 80px; padding: 2px 2px 1px 2px; }
+.section-calendar .calendar-cell h5 { margin: 0; }
+.section-calendar .calendar-cell p { margin: 0 0 4px; }
+.section-calendar .calendar-cell strong { color: #fff; display: block; }
+
+.section-calendar .current-day { background-color: #1d2228; }
+.section-calendar .current-day .calendar-cell { outline: 2px solid #26ac5f; }
+
+.section-event .section-meta { padding-bottom: 10px; }
+.section-event .section-meta ul { list-style: none outside none; padding: 0; margin: 0; }
+.section-event .section-meta ul li { border-top: 1px solid transparent; }
+.section-event .section-meta ul li:first-child { border-top: 0; }
+.section-event .section-meta p { font-size: 12px; line-height: 20px; color: #fff; padding: 10px 12px; margin: 0; background-color: #373c42; }
+.section-event .section-meta p strong { font-weight: 400; color: #79818b; float: right; }
+
+.section-event .section-title { border: 2px solid #373c41; margin-bottom: 1px; }
+.section-event .section-title h4 { font-size: 12px; line-height: 20px; color: #1f904e; font-weight: 400; padding: 8px 10px; margin: 0; }
+.section-event .section-title h4 small { color: #fff; font-size: 100%; min-width: 75px; display: inline-block; }
+
+.section-event .section-content { padding: 12px; background-color: #30353b; }
+.section-event .section-content h4 { font-size: 12px; line-height: 20px; color: #fff; margin-bottom: 12px; }
+.section-event .section-content p { font-size: 12px; line-height: 1.2; color: #79818b; margin: 0 0 10px; }
+.section-event .section-content img { margin: 0 0 10px; display: block; float: none; }
+
 /* ==========================================================================
 	#Hidden Elements
 ========================================================================== */
@@ -714,13 +781,20 @@ a:focus .ico-settings-alt { background-position: -235px -207px; }
 a,
 button,
 input,
-textarea,
 .btn { 
 	transition: color .5s, background-color .5s, border-color .5s; 
 	-webkit-transition: color .5s, background-color .5s, border-color .5s; 
 	-moz-transition: color .5s, background-color .5s, border-color .5s; 
 	-o-transition: color .5s, background-color .5s, border-color .5s; 
 	-ms-transition: color .5s, background-color .5s, border-color .5s; 
+}
+
+textarea {
+	transition: color .5s, background-color .5s, height .5s, border-color .5s; 
+	-webkit-transition: color .5s, background-color .5s, height .5s, border-color .5s; 
+	-moz-transition: color .5s, background-color .5s, height .5s, border-color .5s; 
+	-o-transition: color .5s, background-color .5s, height .5s, border-color .5s; 
+	-ms-transition: color .5s, background-color .5s, height .5s, border-color .5s; 
 }
 
 .nav,
@@ -835,11 +909,26 @@ textarea,
 	}
 
 	.section-forums-single h4 .toggler { display: none; }
+
+	.section-calendar td,
+	.section-calendar td * { font-size: 12px; line-height: 1.2; }
+
+	.section-calendar .calendar-cell { min-height: 100px; padding: 5px 5px 1px 5px; }
 }
 
 @media ( min-width: 768px ) {
 	.nav .logo { margin-right: 33px; }
 	.nav ul li a { padding: 20px 10px; }
+
+	.section-calendar th span { display: inline; }
+
+	.section-event .section-meta ul li { width: 33.33%; float: left; border: 0; border-left: 1px solid transparent; }
+	.section-event .section-meta ul li:first-child { width: 33.34%; border: 0; }
+
+	.section-event .section-content img.alignleft,
+	.section-event .section-content img.alignright { max-width: 400px; }
+	.section-event .section-content img.alignleft { float: left; margin-right: 12px; }
+	.section-event .section-content img.alignright { float: right; margin-left: 12px; }
 }
 
 @media ( min-width: 1024px ) {
@@ -850,6 +939,9 @@ textarea,
 	.footer-nav { float: right; }
 
 	.footer-entry br { display: block; }
+
+	.section-event { padding-bottom: 0.9375rem; }
+	.section-event .section-content { min-height: 526px; }
 }
 
 @media ( min-width: 1025px ) {

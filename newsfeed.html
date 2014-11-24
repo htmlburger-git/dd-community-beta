@@ -359,13 +359,21 @@
 
 				<div class="main-body">
 					<div class="sharebox clearfix">
-						<textarea name="sharebox-field" id="sharebox-field" cols="30" rows="10" class="field" placeholder="Post something for your friends..."></textarea>
+						<form action="?" method="post" class="clearfix" id="form-share">
+							<textarea name="sharebox-field" id="sharebox-field" cols="30" rows="10" class="field sharebox-control" placeholder="Post something for your friends..."></textarea>
 
-						<div class="sharebox-upload">
-							<i class="ico-camera"></i>
+							<div class="sharebox-upload">
+								<i class="ico-camera"></i>
 
-							<input type="file" name="sharebox-file-upload" id="sharebox-file-upload" />
-						</div><!-- /.sharebox-upload -->
+								<input type="file" name="sharebox-file-upload" id="sharebox-file-upload" />
+							</div><!-- /.sharebox-upload -->
+
+							<div class="sharebox-actions">
+								<input type="button" value="Cancel" class="btn-grey btn-cancel-share" name="cancel-share" data-handle="form-share" />
+
+								<input type="submit" value="Submit" class="btn-green" name="submit-share" />
+							</div><!-- /.sharebox-actions -->
+						</form>
 					</div><!-- /.sharebox -->
 
 					<div class="articles clearfix">
@@ -736,8 +744,14 @@
 								</div><!-- /.article-comments -->
 
 								<div class="article-comment-reply">
-									<form action="?" method="post">
-										<textarea name="new-comment-field1" id="new-comment-field1" cols="30" rows="10" class="field" placeholder="Leave a comment"></textarea>
+									<form action="?" method="post" id="form-comment">
+										<textarea name="new-comment-field1" id="new-comment-field1" cols="30" rows="10" class="field sharebox-control" placeholder="Leave a comment"></textarea>
+
+										<div class="form-actions">
+											<input type="button" value="Cancel" class="btn-grey btn-cancel-share" name="cancel-share" data-handle="form-comment" />
+
+											<input type="submit" value="Submit" class="btn-green" name="submit-share" />
+										</div><!-- /.form-actions -->
 									</form>
 								</div><!-- /.article-comment-reply -->
 							</article><!-- /.article -->
