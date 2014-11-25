@@ -134,12 +134,14 @@
 
 					<nav class="nav-access">
 						<ul>
+							<li>Welcome, olshiftyeye</li>
+
 							<li>
-								<a href="#">Account <strong>Sign In</strong></a>
+								<a href="#">Account <strong>Settings</strong></a>
 							</li>
 
 							<li>
-								<a href="#">Account <strong class="create-account">Create</strong></a>
+								<a href="#">Account <strong>Sign Out</strong></a>
 							</li>
 						</ul>
 					</nav><!-- /.nav-access -->
@@ -337,12 +339,16 @@
 			<div class="main clearfix">
 				<nav class="breadcrumbs">
 					<ul>
-						<li class="current">
+						<li>
 							<a href="#">Home</a>
+						</li>
+
+						<li class="current breadcrumbs-adjust">
+							<a href="#">Guides</a>
 						</li>
 					</ul>
 
-					<a href="#" class="sidebar-toggle">
+					<a href="#" class="sidebar-toggle hidden">
 						<span></span>
 
 						<span></span>
@@ -351,211 +357,97 @@
 					</a>
 				</nav><!-- /.breadcrumbs -->
 
-				<div class="content columns large-9 medium-12 small-12">
-					<section class="content-section" id="sectionAnnouncements">
-						<header class="section-head">
+				<div class="main-body">
+					<section class="section-new-thread">
+						<header class="section-head clearfix">
 							<h2>
-								<i class="ico-announcements"></i>
+								<i class="ico-book"></i>
 
-								Announcements
-
-								<a href="#" class="link-settings">
-									<i class="ico-settings-alt"></i>
-								</a>
+								New Guide
 							</h2>
 						</header><!-- /.section-head -->
 
 						<div class="section-body">
-							<ul class="list-announcements clearfix">
-								<li class="columns large-4 medium-4 small-12">
-									<a href="#">
-										<img src="css/images/temp/photo01.jpg" alt="" />
+							<form action="?" method="post">
+								<div class="form-row">
+									<input type="text" class="field" name="field-rte-title" id="field-rte-title" value="" placeholder="Title" />
+								</div><!-- /.form-row -->
 
-										<div class="overlay">
-											<h3>Join Us for Extra Life 2014</h3>
+								<ul class="rte-controls clearfix">
+									<li>
+										<a href="#">
+											<i class="ico-paragraph"></i>
+										</a>
+									</li>
+									
+									<li class="selected">
+										<a href="#">
+											<i class="ico-heading"></i>
+										</a>
+									</li>
+									
+									<li>
+										<a href="#">
+											<i class="ico-quotes"></i>
+										</a>
+									</li>
+									
+									<li>
+										<a href="#">
+											<i class="ico-bold"></i>
+										</a>
+									</li>
+									
+									<li>
+										<a href="#">
+											<i class="ico-italic"></i>
+										</a>
+									</li>
+									
+									<li>
+										<a href="#">
+											<i class="ico-underline"></i>
+										</a>
+									</li>
+									
+									<li>
+										<a href="#">
+											<i class="ico-strike"></i>
+										</a>
+									</li>
+									
+									<li>
+										<a href="#">
+											<i class="ico-ul"></i>
+										</a>
+									</li>
+									
+									<li>
+										<a href="#">
+											<i class="ico-ol"></i>
+										</a>
+									</li>
+									
+									<li>
+										<a href="#">
+											<i class="ico-link"></i>
+										</a>
+									</li>
+								</ul><!-- /.rte-controls -->
 
-											<p>Donate, watch, and play with us on Saturday, October 25th!</p>
-										</div><!-- /.overlay -->
-									</a>
-								</li><!-- /.columns -->
+								<div class="form-row">
+									<textarea name="rte" id="rte" cols="30" rows="10" class="field textarea" placeholder="Write about your post here... :)"></textarea>
+								</div><!-- /.form-row -->
 
-								<li class="columns large-4 medium-4 small-12">
-									<a href="#">
-										<img src="css/images/temp/photo02.jpg" alt="" />
+								<div class="form-actions">
+									<input type="button" value="Cancel" class="btn-grey" name="rte-cancel" />
 
-										<div class="overlay">
-											<h3>October Power Hour!</h3>
-
-											<p>Donate, watch, and play with us on Saturday, October 25th!</p>
-										</div><!-- /.overlay -->
-									</a>
-								</li><!-- /.columns -->
-
-								<li class="columns large-4 medium-4 small-12">
-									<a href="#">
-										<img src="css/images/temp/photo03.jpg" alt="" />
-
-										<div class="overlay">
-											<h3>Canyon Clash 3!</h3>
-
-											<p>Donate, watch, and play with us on Saturday, October 25th!</p>
-										</div><!-- /.overlay -->
-									</a>
-								</li><!-- /.columns -->
-							</ul>
+									<input type="submit" value="Submit" class="btn-green" name="rte-submit" />
+								</div><!-- /.form-actions -->
+							</form>
 						</div><!-- /.section-body -->
-					</section><!-- /.content-section -->
-
-					<section class="content-section" id="sectionCommunity">
-						<header class="section-head">
-							<h2>
-								<i class="ico-community"></i>
-
-								Community
-							</h2>
-						</header><!-- /.section-head -->
-
-						<div class="section-body">
-							<ul class="list-community clearfix">
-								<li class="columns large-4 medium-4 small-12">
-									<a href="#">
-										<img src="css/images/temp/photo04.jpg" alt="" />
-
-										<strong>
-											<i class="ico-newsfeed"></i>
-
-											Newsfeed
-										</strong>
-									</a>
-								</li><!-- /.columns -->
-
-								<li class="columns large-4 medium-4 small-12">
-									<a href="#">
-										<img src="css/images/temp/photo05.jpg" alt="" />
-
-										<strong>
-											<i class="ico-forums"></i>
-
-											Forums
-										</strong>
-									</a>
-								</li><!-- /.columns -->
-
-								<li class="columns large-4 medium-4 small-12">
-									<a href="#">
-										<img src="css/images/temp/photo06.jpg" alt="" />
-
-										<strong>
-											<i class="ico-guides"></i>
-
-											Guides
-										</strong>
-									</a>
-								</li><!-- /.columns -->
-
-								<li class="columns large-4 medium-4 small-12">
-									<a href="#">
-										<img src="css/images/temp/photo07.jpg" alt="" />
-
-										<strong>
-											<i class="ico-media"></i>
-
-											Media
-										</strong>
-									</a>
-								</li><!-- /.columns -->
-
-								<li class="columns large-4 medium-4 small-12">
-									<a href="#">
-										<img src="css/images/temp/photo08.jpg" alt="" />
-
-										<strong>
-											<i class="ico-guilds"></i>
-
-											Guilds
-										</strong>
-									</a>
-								</li><!-- /.columns -->
-							</ul>
-						</div><!-- /.section-body -->
-					</section><!-- /.content-section -->
-				</div><!-- /.content -->
-
-				<div class="sidebar columns large-3 small-12">
-					<header class="sidebar-head">
-						<h2>
-							<i class="ico-calendar"></i>
-
-							Upcoming Events
-
-							<a href="#" class="link-add">
-								<i class="ico-plus"></i>
-							</a>
-						</h2>
-					</header><!-- /.sidebar-head -->
-
-					<div class="sidebar-body">
-						<ul class="list-events">
-							<li>
-								<a href="#" class="link-settings">
-									<i class="ico-settings-alt"></i>
-								</a>
-
-								<h3>
-									<a href="#">Event Title</a>
-								</h3>
-
-								<h5>mm/dd/yyy</h5>
-
-								<p>Lorem Ipsum dolor sit amet, consecteur adipscing elit. Aenean commodo ligulla eget dolor. Aenan massa. Cum sociis natoque penatibus et magnis dis parturient.</p>
-							</li>
-
-							<li>
-								<a href="#" class="link-settings">
-									<i class="ico-settings-alt"></i>
-								</a>
-								
-								<h3>
-									<a href="#">Event Title</a>
-								</h3>
-
-								<h5>mm/dd/yyy</h5>
-
-								<p>Lorem Ipsum dolor sit amet, consecteur adipscing elit. Aenean commodo ligulla eget dolor. Aenan massa. </p>
-							</li>
-
-							<li>
-								<a href="#" class="link-settings">
-									<i class="ico-settings-alt"></i>
-								</a>
-								
-								<h3>
-									<a href="#">Event Title</a>
-								</h3>
-
-								<h5>mm/dd/yyy</h5>
-
-								<p>Lorem Ipsum dolor sit amet, consecteur adipscing elit. Aenean commodo ligulla eget dolor. Aenan massa. Cum sociis natoque penatibus et magnis dis parturient.</p>
-							</li>
-
-							<li>
-								<a href="#" class="link-settings">
-									<i class="ico-settings-alt"></i>
-								</a>
-								
-								<h3>
-									<a href="#">Event Title</a>
-								</h3>
-
-								<h5>mm/dd/yyy</h5>
-
-								<p>Lorem Ipsum dolor sit amet, consecteur adipscing elit. Aenean commodo ligulla eget dolor. Aenan massa. Cum sociis natoque penatibus et magnis dis parturient. Ipsum dolor sit amet, consecteur adipscing elit!!!!</p>
-							</li>
-						</ul><!-- /.list-events -->
-
-						<a href="#" class="btn-green">Load More</a>
-					</div><!-- /.sidebar-body -->
-				</div><!-- /.sidebar -->
+					</section><!-- /.section-new-thread -->
+				</div><!-- /.main-body -->
 			</div><!-- /.main -->
 
 			<footer class="footer hidden-for-small-only">

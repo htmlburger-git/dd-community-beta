@@ -13,7 +13,8 @@
 		'sidebar': 'sidebar-visible',
 		'mobile': 'mobile-device',
 		'desktop': 'desktop-device',
-		'collapse': 'collapsed'
+		'collapse': 'collapsed',
+		'formControls': 'show-controls'
 	};
 	var htmlTag, wrapper;
 
@@ -91,7 +92,7 @@
 
 		for ( ; i < textarea.length; i++ ) {
 			textarea[i].addEventListener('focus', function(event) {
-				this.parentNode.classList.add('show-controls');
+				this.parentNode.classList.add(visibilityClassNames.formControls);
 			}, false);
 		}
 	};
@@ -108,7 +109,7 @@
 
 				var form = doc.getElementById(this.getAttribute('data-handle'));
 
-				form.classList.remove('show-controls');
+				form.classList.remove(visibilityClassNames.formControls);
 			}, false);
 		}
 	};
@@ -170,7 +171,7 @@
 			var i = 0;
 
 			for ( ; i < dropdowns.length; i++ ) {
-				dropdowns[i].classList.remove('expanded');
+				dropdowns[i].classList.remove(visibilityClassNames.dropdown);
 			}
 
 			htmlTag.classList.remove(visibilityClassNames.notifications);
@@ -188,7 +189,7 @@
 			var i = 0;
 
 			for ( ; i < dropdowns.length; i++ ) {
-				dropdowns[i].classList.remove('expanded');
+				dropdowns[i].classList.remove(visibilityClassNames.dropdown);
 			}
 
 			htmlTag.classList.remove(visibilityClassNames.notifications);
@@ -208,6 +209,7 @@
 		// We overwrite their z-index with JS since we do not know their exact count
 		// e.g. article's comments
 		setZindex('.article-comment');
+		setZindex('.thread');
 	}, false);
 
 })(window, document);
