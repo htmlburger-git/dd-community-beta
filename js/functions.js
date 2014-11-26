@@ -1,7 +1,7 @@
 ;(function(window, document, undefined) {
 	'use strict';
 
-	// Variable for the current scope
+	// Variables for the current scope
 	var win = window;
 	var doc = document;
 	var visibilityClassNames = {
@@ -14,7 +14,9 @@
 		'mobile': 'mobile-device',
 		'desktop': 'desktop-device',
 		'collapse': 'collapsed',
-		'formControls': 'show-controls'
+		'formControls': 'show-controls',
+		'visible': 'visible',
+		'current': 'current'
 	};
 	var htmlTag, wrapper;
 
@@ -128,6 +130,42 @@
 		}
 	};
 
+	// Tabs Functionality
+	// Hide Tabs
+	function hideTab() {
+		var tabHandler = doc.querySelectorAll('.tab-handler');
+		var tab = doc.querySelectorAll('.tab');
+		var i = 0;
+
+		for ( ; i < tab.length; i++ ) {
+			tabHandler[i].parentNode.classList.remove(visibilityClassNames.current);
+			tab[i].classList.remove(visibilityClassNames.visible);
+		}
+	};
+
+	// Tabs Functionality
+	// Show Tabs
+	function tabs() {
+		if ( win.innerWidth > 640 ) {
+			var tabHandler = doc.querySelectorAll('.tab-handler');
+			var i = 0;
+
+			for ( ; i < tabHandler.length; i++ ) {
+				
+
+				tabHandler[i].addEventListener('click', function(event) {
+					event.preventDefault();
+
+					hideTab();
+
+					this.parentNode.classList.add(visibilityClassNames.current);
+
+					doc.getElementById(this.getAttribute('data-href')).classList.add(visibilityClassNames.visible);
+				}, false);
+			}
+		}
+	};
+
 	// Document Ready Event
 	document.addEventListener('DOMContentLoaded', function(event) {
 		// Assign values to the empty variables above
@@ -180,7 +218,7 @@
 		}, false);
 
 		// Toggle sidebar visibility for tablet devices
-		// This only works on a table device or a medium viewport width
+		// This only works on a tablet device or a medium viewport width
 		// and closes all previously opened dropdowns inlucing notifcations.
 		doc.querySelector('.sidebar-toggle').addEventListener('click', function(event) {
 			event.preventDefault();
@@ -205,11 +243,15 @@
 		// Collapse textareas and hide form buttons
 		shareboxControlsHide();
 
+		// Tabs Functionality
+		tabs();
+
 		// Some elements overlap due to position not static
 		// We overwrite their z-index with JS since we do not know their exact count
 		// e.g. article's comments
 		setZindex('.article-comment');
 		setZindex('.thread');
+		setZindex('.sidebar-section .sidebar-body > ul > li');
 	}, false);
 
 })(window, document);
