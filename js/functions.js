@@ -177,8 +177,7 @@
 		for ( ; i < scrollable.length; i++ ) {
 			// Create iScroll instances and init the custom scrollbar
 			scrollbar = new IScroll(doc.getElementById(scrollable[i].id), {
-				hScroll: true,
-				vScroll: true,
+				click: true,
 				scrollbars: true,
 				mouseWheel: true,
 				interactiveScrollbars: true,
