@@ -18,6 +18,8 @@
 		'visible': 'visible',
 		'current': 'current'
 	};
+	var scrollbars = [];
+	var isMessengerPage = doc.querySelectorAll('.messenger').length > 0;
 	var htmlTag, wrapper;
 
 	// Detect if the user is on a mobile device
@@ -146,13 +148,11 @@
 	// Tabs Functionality
 	// Show Tabs
 	function tabs() {
-		if ( win.innerWidth > 640 ) {
+		if ( win.innerWidth > 640 || isMessengerPage ) {
 			var tabHandler = doc.querySelectorAll('.tab-handler');
 			var i = 0;
 
 			for ( ; i < tabHandler.length; i++ ) {
-				
-
 				tabHandler[i].addEventListener('click', function(event) {
 					event.preventDefault();
 
@@ -164,6 +164,56 @@
 				}, false);
 			}
 		}
+	};
+
+	// Custom Scrollbars
+	// https://github.com/cubiq/iscroll
+	// http://iscrolljs.com/
+	function customScrollBars() {
+		var scrollable = doc.querySelectorAll('.scrollable');
+		var i = 0;
+		var scrollbar;
+
+		for ( ; i < scrollable.length; i++ ) {
+			// Create iScroll instances and init the custom scrollbar
+			scrollbar = new IScroll(doc.getElementById(scrollable[i].id), {
+				hScroll: true,
+				vScroll: true,
+				scrollbars: true,
+				mouseWheel: true,
+				interactiveScrollbars: true,
+				shrinkScrollbars: 'scale',
+				fadeScrollbars: false
+			});
+
+			// Fill the array with each iScroll instance
+			// We will use that array to resize each iScroll instance on window resize
+			scrollbars.push(scrollbar);
+		}
+	};
+
+	// Show active conversations on mobile device
+	function toggleConversations() {
+		var friends = doc.querySelectorAll('.list-friends li a');
+		var i = 0;
+
+		for ( ; i < friends.length; i++ ) {
+			friends[i].addEventListener('click', function(event) {
+				if ( isMobile.any() && win.innerWidth < 641 ) {
+					event.preventDefault();
+
+					doc.querySelector('.content').classList.add(visibilityClassNames.visible);
+				}
+			}, false);
+		}
+
+		doc.getElementById('goBack').addEventListener('click', function(event) {
+			if ( isMobile.any() && win.innerWidth < 641 ) {
+				event.preventDefault();
+
+				doc.querySelector('.content').classList.remove(visibilityClassNames.visible);
+			}
+		}, false);
 	};
 
 	// Document Ready Event
@@ -246,12 +296,36 @@
 		// Tabs Functionality
 		tabs();
 
-		// Some elements overlap due to position not static
+		// Some elements overlap due to position !== static
 		// We overwrite their z-index with JS since we do not know their exact count
 		// e.g. article's comments
 		setZindex('.article-comment');
 		setZindex('.thread');
 		setZindex('.sidebar-section .sidebar-body > ul > li');
+		setZindex('.section-forums-single > ul > li');
+
+		// Show active conversations on mobile device
+		toggleConversations();
+
+		// window load event
+		win.addEventListener('load', function() {
+			// Custom Scrollbars
+			// https://github.com/cubiq/iscroll
+			// http://iscrolljs.com/
+			customScrollBars();
+		}, false);
+
+		win.addEventListener('resize', function() {
+			// Custom Scrollbars Reload on Window Resize - refresh() method.
+			// https://github.com/cubiq/iscroll
+			// http://iscrolljs.com/
+			if ( isMessengerPage ) {
+				for ( var i = 0; i < scrollbars.length; i++ ) {
+					// Resize each iScroll instance depending on the height of its container
+					scrollbars[i].refresh();
+				}
+			}
+		}, false);
 	}, false);
 
 })(window, document);
