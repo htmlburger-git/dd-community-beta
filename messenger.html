@@ -32,7 +32,7 @@
 				<a href="#" class="logo notext">Tera</a>
 
 				<div class="link-search alignright">
-					<a href="#">
+					<a href="#searchModal" class="modal-trigger">
 						<i class="ico-search"></i>
 					</a>
 				</div>
@@ -265,7 +265,7 @@
 					<nav class="nav-utilities alignright">
 						<ul>
 							<li class="link-search">
-								<a href="#">
+								<a href="#searchModal" class="modal-trigger">
 									<i class="ico-search"></i>
 								</a>
 							</li>
@@ -808,7 +808,7 @@
 						</div><!-- /.online-status -->
 
 						<div class="tabs">
-							<div class="tab scrollable visible" id="allFriends">
+							<div class="tab tab-media scrollable visible" id="allFriends">
 								<div class="tab-inner">
 									<ul class="list-friends">
 										<li>
@@ -1070,7 +1070,7 @@
 								</div><!-- /.tab-inner -->
 							</div><!-- /.tab -->
 
-							<div class="tab scrollable" id="onlineFriends">
+							<div class="tab tab-media scrollable" id="onlineFriends">
 								<div class="tab-inner">
 									<ul class="list-friends">
 										<li>
@@ -1332,7 +1332,7 @@
 								</div><!-- /.tab-inner -->
 							</div><!-- /.tab -->
 
-							<div class="tab scrollable" id="unreadFriends">
+							<div class="tab tab-media scrollable" id="unreadFriends">
 								<div class="tab-inner">
 									<ul class="list-friends">
 										<li>
@@ -1687,6 +1687,1044 @@
 			</footer><!-- /.footer -->
 		</div><!-- /.row -->
 	</div><!-- /.wrapper -->
+
+	<div id="modalOverlay"></div><!-- /#modalOverlay -->
+
+	<div class="modal modal-search row" id="searchModal">
+		<header class="modal-head clearfix">
+			<h2>
+				<i class="ico-magnifying-glass"></i>
+
+				Search
+			</h2>
+
+			<i class="ico-modal-close modal-close" data-close="searchModal"></i>
+		</header><!-- /.modal-head -->
+
+		<div class="modal-body tabs-section">
+			<form action="?" method="post">
+				<input type="text" name="site-search" id="site-search" value="" placeholder="Raid..." />
+
+				<i class="ico-preloader spinning"></i>
+			</form>
+
+			<div class="tabs">
+				<div class="modal-section tab visible" id="modalSection1">
+					<div class="columns small-12 medium-12 large-4">
+						<h3>
+							<i class="ico-forums-main"></i>
+
+							Tera Forums
+
+							<a href="#modalSection2" class="modal-tab">Show <strong>17</strong> more...</a>
+						</h3>
+						
+						<ul>
+							<li>
+								<a href="#">
+									<strong>Looking for a raiding partner.</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding this afternoon, PM me if you’re interested lorem ipsum</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Best gear for raiding the Mines of Moria?</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding guild, looking for members</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Another made up thread title with “raiding” in it</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+						</ul>
+					</div><!-- /.columns small-12 medium-12 large-4 -->
+					
+					<div class="columns small-12 medium-12 large-4">
+						<h3>
+							<i class="ico-book"></i>
+
+							Guides
+
+							<a href="#modalSection3" class="modal-tab">Show <strong>2</strong> more...</a>
+						</h3>
+						
+						<ul>
+							<li>
+								<a href="#">
+									<strong>How to raid #likeaboss </strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding with a party of 4.</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Guide title with the word “raid” in it</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>How to raid as a level 1 newb</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Is raid even a word used in TERA?</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+						</ul>
+					</div><!-- /.columns small-12 medium-12 large-4 -->
+					
+					<div class="columns small-12 medium-12 large-4">
+						<h3>
+							<i class="ico-friends"></i>
+
+							Users
+
+							<a href="#modalSection4" class="modal-tab">Show <strong>231</strong> more...</a>
+						</h3>
+						
+						<ul>
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar01.png" alt="" />
+
+									<strong>How to raid #likeaboss </strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar12.png" alt="" />
+
+									<strong>Raiding with a party of 4.</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar13.png" alt="" />
+
+									<strong>Guide title with the word “raid” in it</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar11.png" alt="" />
+
+									<strong>How to raid as a level 1 newb</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar14.png" alt="" />
+
+									<strong>Is raid even a word used in TERA?</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+						</ul>
+					</div><!-- /.columns small-12 medium-12 large-4 -->
+				</div><!-- /.modal-section -->
+
+				<div class="modal-section tab" id="modalSection2">
+					<h3>
+						<i class="ico-forums-main"></i>
+
+						Tera Forums
+
+						<a href="#modalSection1" class="modal-tab">Show less...</a>
+					</h3>
+
+					<div class="columns small-12 medium-12 large-4">					
+						<ul>
+							<li>
+								<a href="#">
+									<strong>Looking for a raiding partner.</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding this afternoon, PM me if you’re interested lorem ipsum</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Best gear for raiding the Mines of Moria?</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding guild, looking for members</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Another made up thread title with “raiding” in it</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									<strong>Looking for a raiding partner.</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding this afternoon, PM me if you’re interested lorem ipsum</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Best gear for raiding the Mines of Moria?</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding guild, looking for members</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Another made up thread title with “raiding” in it</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+						</ul>
+					</div><!-- /.columns small-12 medium-12 large-4 -->
+					
+					<div class="columns small-12 medium-12 large-4">					
+						<ul>
+							<li>
+								<a href="#">
+									<strong>Looking for a raiding partner.</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding this afternoon, PM me if you’re interested lorem ipsum</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Best gear for raiding the Mines of Moria?</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding guild, looking for members</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Another made up thread title with “raiding” in it</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									<strong>Looking for a raiding partner.</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding this afternoon, PM me if you’re interested lorem ipsum</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Best gear for raiding the Mines of Moria?</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding guild, looking for members</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Another made up thread title with “raiding” in it</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+						</ul>
+					</div><!-- /.columns small-12 medium-12 large-4 -->
+					
+					<div class="columns small-12 medium-12 large-4">					
+						<ul>
+							<li>
+								<a href="#">
+									<strong>Looking for a raiding partner.</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding this afternoon, PM me if you’re interested lorem ipsum</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Best gear for raiding the Mines of Moria?</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding guild, looking for members</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Another made up thread title with “raiding” in it</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									<strong>Looking for a raiding partner.</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding this afternoon, PM me if you’re interested lorem ipsum</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Best gear for raiding the Mines of Moria?</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding guild, looking for members</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Another made up thread title with “raiding” in it</strong>
+
+									Views: 1,986 | Replies: 132
+								</a>
+							</li>
+						</ul>
+					</div><!-- /.columns small-12 medium-12 large-4 -->
+				</div><!-- /.modal-section -->
+
+				<div class="modal-section tab" id="modalSection3">
+					<h3>
+						<i class="ico-book"></i>
+
+						Guides
+
+						<a href="#modalSection1" class="modal-tab">Show less...</a>
+					</h3>
+
+					<div class="columns small-12 medium-12 large-4">
+						<ul>
+							<li>
+								<a href="#">
+									<strong>How to raid #likeaboss </strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding with a party of 4.</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Guide title with the word “raid” in it</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>How to raid as a level 1 newb</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Is raid even a word used in TERA?</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									<strong>How to raid #likeaboss </strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding with a party of 4.</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Guide title with the word “raid” in it</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>How to raid as a level 1 newb</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Is raid even a word used in TERA?</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+						</ul>
+					</div><!-- /.columns small-12 medium-12 large-4 -->
+
+					<div class="columns small-12 medium-12 large-4">
+						<ul>
+							<li>
+								<a href="#">
+									<strong>How to raid #likeaboss </strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding with a party of 4.</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Guide title with the word “raid” in it</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>How to raid as a level 1 newb</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Is raid even a word used in TERA?</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									<strong>How to raid #likeaboss </strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding with a party of 4.</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Guide title with the word “raid” in it</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>How to raid as a level 1 newb</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Is raid even a word used in TERA?</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+						</ul>
+					</div><!-- /.columns small-12 medium-12 large-4 -->
+
+					<div class="columns small-12 medium-12 large-4">
+						<ul>
+							<li>
+								<a href="#">
+									<strong>How to raid #likeaboss </strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding with a party of 4.</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Guide title with the word “raid” in it</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>How to raid as a level 1 newb</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Is raid even a word used in TERA?</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									<strong>How to raid #likeaboss </strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Raiding with a party of 4.</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Guide title with the word “raid” in it</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>How to raid as a level 1 newb</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<strong>Is raid even a word used in TERA?</strong>
+
+									Views: 594 | Replies: 20,000
+								</a>
+							</li>
+						</ul>
+					</div><!-- /.columns small-12 medium-12 large-4 -->
+				</div><!-- /.modal-section -->
+
+				<div class="modal-section tab" id="modalSection4">
+					<h3>
+						<i class="ico-friends"></i>
+
+						Users
+
+						<a href="#modalSection1" class="modal-tab">Show less...</a>
+					</h3>
+
+					<div class="columns small-12 medium-12 large-4">
+						<ul>
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar01.png" alt="" />
+
+									<strong>How to raid #likeaboss </strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar12.png" alt="" />
+
+									<strong>Raiding with a party of 4.</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar13.png" alt="" />
+
+									<strong>Guide title with the word “raid” in it</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar11.png" alt="" />
+
+									<strong>How to raid as a level 1 newb</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar14.png" alt="" />
+
+									<strong>Is raid even a word used in TERA?</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar01.png" alt="" />
+
+									<strong>How to raid #likeaboss </strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar12.png" alt="" />
+
+									<strong>Raiding with a party of 4.</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar13.png" alt="" />
+
+									<strong>Guide title with the word “raid” in it</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar11.png" alt="" />
+
+									<strong>How to raid as a level 1 newb</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar14.png" alt="" />
+
+									<strong>Is raid even a word used in TERA?</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+						</ul>
+					</div><!-- /.columns small-12 medium-12 large-4 -->
+
+					<div class="columns small-12 medium-12 large-4">
+						<ul>
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar01.png" alt="" />
+
+									<strong>How to raid #likeaboss </strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar12.png" alt="" />
+
+									<strong>Raiding with a party of 4.</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar13.png" alt="" />
+
+									<strong>Guide title with the word “raid” in it</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar11.png" alt="" />
+
+									<strong>How to raid as a level 1 newb</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar14.png" alt="" />
+
+									<strong>Is raid even a word used in TERA?</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar01.png" alt="" />
+
+									<strong>How to raid #likeaboss </strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar12.png" alt="" />
+
+									<strong>Raiding with a party of 4.</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar13.png" alt="" />
+
+									<strong>Guide title with the word “raid” in it</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar11.png" alt="" />
+
+									<strong>How to raid as a level 1 newb</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar14.png" alt="" />
+
+									<strong>Is raid even a word used in TERA?</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+						</ul>
+					</div><!-- /.columns small-12 medium-12 large-4 -->
+
+					<div class="columns small-12 medium-12 large-4">
+						<ul>
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar01.png" alt="" />
+
+									<strong>How to raid #likeaboss </strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar12.png" alt="" />
+
+									<strong>Raiding with a party of 4.</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar13.png" alt="" />
+
+									<strong>Guide title with the word “raid” in it</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar11.png" alt="" />
+
+									<strong>How to raid as a level 1 newb</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar14.png" alt="" />
+
+									<strong>Is raid even a word used in TERA?</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar01.png" alt="" />
+
+									<strong>How to raid #likeaboss </strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar12.png" alt="" />
+
+									<strong>Raiding with a party of 4.</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar13.png" alt="" />
+
+									<strong>Guide title with the word “raid” in it</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar11.png" alt="" />
+
+									<strong>How to raid as a level 1 newb</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="avatar">
+									<img src="css/images/temp/avatar14.png" alt="" />
+
+									<strong>Is raid even a word used in TERA?</strong>
+
+									Friends: 87 | Posts: 2.345
+								</a>
+							</li>
+						</ul>
+					</div><!-- /.columns small-12 medium-12 large-4 -->
+				</div><!-- /.modal-section -->
+			</div><!-- /.tabs -->
+		</div><!-- /.modal-body -->
+	</div><!-- /.modal modal-search -->
 	
 	<script src="js/iscroll.js"></script>
 	

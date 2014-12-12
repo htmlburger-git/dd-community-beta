@@ -16,7 +16,8 @@
 		'collapse': 'collapsed',
 		'formControls': 'show-controls',
 		'visible': 'visible',
-		'current': 'current'
+		'current': 'current',
+		'modal': 'show-modal'
 	};
 	var scrollbars = [];
 	var isMessengerPage = doc.querySelectorAll('.messenger').length > 0;
@@ -136,12 +137,48 @@
 	// Hide Tabs
 	function hideTab() {
 		var tabHandler = doc.querySelectorAll('.tab-handler');
-		var tab = doc.querySelectorAll('.tab');
+		var tab = doc.querySelectorAll('.tab-media');
 		var i = 0;
 
 		for ( ; i < tab.length; i++ ) {
 			tabHandler[i].parentNode.classList.remove(visibilityClassNames.current);
 			tab[i].classList.remove(visibilityClassNames.visible);
+		}
+	};
+
+	// Hide Tabs in Modal
+	function hideModalTab() {
+		var tab = doc.querySelectorAll('.modal .tab');
+		var i = 0;
+
+		for ( ; i < tab.length; i++ ) {
+			tab[i].classList.remove(visibilityClassNames.visible);
+		}
+	};
+
+	// Hide Admin Pages Elements
+	function hideAdminPanels() {
+		var adminTabTrigger = doc.querySelectorAll('.admin-tab');
+		var adminPanel = doc.querySelectorAll('.admin-panel');
+		var i = 0;
+
+		for ( ; i < adminPanel.length; i++ ) {
+			adminTabTrigger[i].parentNode.classList.remove(visibilityClassNames.current);
+			adminPanel[i].classList.remove(visibilityClassNames.visible);
+		}
+	};
+
+	// Hide visible Admin Page Element
+	function hideAdminPanel() {
+		var dismissButton = doc.querySelectorAll('.panel-dismiss');
+		var i = 0;
+
+		for ( ; i < dismissButton.length; i++ ) {
+			dismissButton[i].addEventListener('click', function(event) {
+				event.preventDefault();
+
+				doc.getElementById(this.getAttribute('data-dismiss')).classList.remove(visibilityClassNames.visible);
+			}, false);
 		}
 	};
 
@@ -163,6 +200,46 @@
 					doc.getElementById(this.getAttribute('data-href')).classList.add(visibilityClassNames.visible);
 				}, false);
 			}
+		}
+	};
+
+	// Show Tabs in Modal
+	function modalTabs() {
+		var tabHandler = doc.querySelectorAll('.modal-tab');
+		var i = 0;
+
+		for ( ; i < tabHandler.length; i++ ) {
+			tabHandler[i].addEventListener('click', function(event) {
+				event.preventDefault();
+
+				hideModalTab();
+
+				this.parentNode.classList.add(visibilityClassNames.current);
+				
+				document.getElementById(this.getAttribute('href').replace('#', '')).classList.add(visibilityClassNames.visible);
+			}, false);
+		}
+	};
+
+	// Show Tabs in Modal
+	function adminPanels() {
+		var adminTabTrigger = doc.querySelectorAll('.admin-tab');
+		var i = 0;
+
+		for ( ; i < adminTabTrigger.length; i++ ) {
+			adminTabTrigger[i].addEventListener('click', function(event) {
+				event.preventDefault();
+
+				hideAdminPanels();
+
+				this.parentNode.classList.remove(visibilityClassNames.current);
+				
+				document.getElementById(this.getAttribute('href').replace('#', '')).classList.add(visibilityClassNames.visible);
+
+				if ( isMobile.any() ) {
+					win.scrollTo(0, 0);
+				}
+			}, false);
 		}
 	};
 
@@ -206,13 +283,68 @@
 			}, false);
 		}
 
-		doc.getElementById('goBack').addEventListener('click', function(event) {
-			if ( isMobile.any() && win.innerWidth < 641 ) {
+		if ( doc.querySelectorAll('#goBack').length > 0 ) {
+			doc.getElementById('goBack').addEventListener('click', function(event) {
+				if ( isMobile.any() && win.innerWidth < 641 ) {
+					event.preventDefault();
+
+					doc.querySelector('.content').classList.remove(visibilityClassNames.visible);
+				}
+			}, false);
+		}
+	};
+
+	// Show inline Modal overlays
+	function showInlineModals() {
+		var modalTrigger = doc.querySelectorAll('.modal-trigger');
+		var i = 0;
+
+		for ( ; i < modalTrigger.length; i++ ) {
+			modalTrigger[i].addEventListener('click', function(event) {
 				event.preventDefault();
 
-				doc.querySelector('.content').classList.remove(visibilityClassNames.visible);
-			}
-		}, false);
+				var modal = this.getAttribute('href').replace('#', '');
+
+				doc.getElementById(modal).classList.add(visibilityClassNames.visible)
+				doc.getElementById('modalOverlay').classList.add(visibilityClassNames.visible);
+
+				htmlTag.classList.remove(visibilityClassNames.nav);
+				htmlTag.classList.add(visibilityClassNames.modal);
+			}, false);
+		}
+	};
+
+	// Hide inline Modal overlays
+	function hideInlineModals() {
+		var modalClose = doc.querySelectorAll('.modal-close');
+		var i = 0;
+
+		for ( ; i < modalClose.length; i++ ) {
+			modalClose[i].addEventListener('click', function(event) {
+				event.preventDefault();
+
+				var modal = this.getAttribute('data-close');
+
+				doc.getElementById(modal).classList.remove(visibilityClassNames.visible)
+				doc.getElementById('modalOverlay').classList.remove(visibilityClassNames.visible);
+
+				htmlTag.classList.remove(visibilityClassNames.modal);
+			}, false);
+		}
+	};
+
+	// Custom Selectbox overlay
+	function customSelectOverlay() {
+		var customSelect = doc.querySelectorAll('.custom-select select');
+		var i = 0;
+
+		for ( ; i < customSelect.length; i++ ) {
+			customSelect[i].previousElementSibling.innerHTML = customSelect[i].options[customSelect[i].options.selectedIndex].innerHTML;
+
+			customSelect[i].addEventListener('change', function(event) {
+				this.previousElementSibling.innerHTML = this.options[this.options.selectedIndex].innerHTML;
+			}, false);
+		}
 	};
 
 	// Document Ready Event
@@ -294,6 +426,9 @@
 
 		// Tabs Functionality
 		tabs();
+		modalTabs();
+		adminPanels();
+		hideAdminPanel();
 
 		// Some elements overlap due to position !== static
 		// We overwrite their z-index with JS since we do not know their exact count
@@ -305,6 +440,15 @@
 
 		// Show active conversations on mobile device
 		toggleConversations();
+
+		// Show inline Modal overlays
+		showInlineModals();
+
+		// Hide inline Modal overlays
+		hideInlineModals();
+
+		// Custom Selectbox overlay
+		customSelectOverlay();
 
 		// window load event
 		win.addEventListener('load', function() {
